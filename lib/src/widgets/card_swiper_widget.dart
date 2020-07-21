@@ -19,7 +19,7 @@ class CardSwiper extends StatelessWidget {
               child: Image.network("http://via.placeholder.com/350x150",fit: BoxFit.cover),
             );
           },
-          itemCount: 3,
+          itemCount: peliculas.length,
           itemWidth: _screenSize.width * 0.7, // 70% del ancho del telefono.
           itemHeight: _screenSize.height * 0.5, // 50% del alto del telefono.
           layout: SwiperLayout.STACK,
