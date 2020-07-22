@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
            future: peliculasProvider.getPopulares(),
            builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
              
-             snapshot.data.forEach((element) => print(element.title));
+             snapshot.data?.forEach((element) => print(element.title)); /// [?] haz ese forEach si existe [sanpshot.data]
              return Container();
            },
          ),
