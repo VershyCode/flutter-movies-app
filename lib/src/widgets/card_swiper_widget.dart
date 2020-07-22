@@ -8,8 +8,7 @@ class CardSwiper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final _screenSize = MediaQuery.of(context).size;
+    final _screenSize = MediaQuery.of(context).size; // Obtenemos el size de la pantalla del dispositivo.
 
     return Container(
       padding: EdgeInsets.only(top: 10.0),
@@ -18,7 +17,7 @@ class CardSwiper extends StatelessWidget {
             return  ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
               child: FadeInImage(
-                image: NetworkImage(peliculas[index].getPostImg()),
+                image: NetworkImage(peliculas[index].getPostImg()), /// [index] es la posicion de la pelicula en [peliculas].
                 placeholder: AssetImage('assets/loading.gif'),
                 fit: BoxFit.cover,
               ),

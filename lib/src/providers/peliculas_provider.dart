@@ -15,8 +15,20 @@ class PeliculasProvider {
     });
     final response = await http.get(url); /// [response] = respuesta de la API.
     final decodedData = json.decode(response.body); /// Convertimos la respuesta a un json.
-    final peliculas = new Peliculas.fromJsonList(decodedData['results']); // peliculas = lista de peliculas desde el modelo.
+    final peliculas = new Peliculas.fromJsonList(decodedData['results']); /// [peliculas] = lista de peliculas desde el modelo.
 
     return peliculas.items;
+  }
+
+  Future<List<Pelicula>> getPopulares() async {
+    final url = Uri.https(_url, '3/movie/popular', {
+      'api_key'   : _apikey,
+      'language'  : _language
+    });
+    final response = await http.get(url);
+    final respDecoded = json.decode(response.body);
+    final peliculasPopulares = new Peliculas.fromJsonList(respDecoded['results']);
+    
+    return peliculasPopulares.items;
   }
 }
