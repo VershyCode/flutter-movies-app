@@ -10,7 +10,7 @@ class PeliculasProvider {
   int _popularesPage = 0;
   List<Pelicula> _populares = new List();
   final _popularesStreamController = new StreamController<List<Pelicula>>.broadcast();
-  
+
   // Getters
   Function(List<Pelicula>) get popularesSink => _popularesStreamController.sink.add;
   Stream<List<Pelicula>> get popularesStream => _popularesStreamController.stream;
