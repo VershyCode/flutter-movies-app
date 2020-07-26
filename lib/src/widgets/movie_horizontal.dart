@@ -10,17 +10,18 @@ class MovieHorizontal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _screenSize = MediaQuery.of(context).size;
+
     _pageController.addListener(() {
       // Si los pixels son igual al maxScroll - 200, entonces llamar a siguientepagina.
       if(_pageController.position.pixels > _pageController.position.maxScrollExtent - 200){
         siguientePagina(); // callback.
       }
     });
+
     return Container(
       height: _screenSize.height * 0.2, // 20%
       child: PageView.builder(
         pageSnapping: false,
-        // children: _tarjetas(context),
         controller: _pageController,
         itemCount: peliculas.length,
         itemBuilder: (BuildContext context, i){
@@ -29,8 +30,9 @@ class MovieHorizontal extends StatelessWidget {
       ),
     );
   }
+
   Widget _tarjeta(BuildContext context, Pelicula pelicula){
-   return Container(
+   final tarjeta = Container(
         margin: EdgeInsets.only(right: 15.0),
         child: Column(
           children: <Widget>[
@@ -52,10 +54,11 @@ class MovieHorizontal extends StatelessWidget {
           ],
         ),
       ); 
-  }
-  List<Widget> _tarjetas(BuildContext context) {
-    return peliculas.map((pelicula){
-      
-    }).toList();
+      return GestureDetector(
+        child: tarjeta,
+        onTap: (){
+          Navigator.pushNamed(context, 'detalle', arguments: pelicula);
+        },
+      );
   }
 }
