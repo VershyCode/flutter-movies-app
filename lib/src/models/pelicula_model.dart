@@ -75,4 +75,11 @@ class Pelicula {
       return 'https://image.tmdb.org/t/p/w500/$posterPath';
     }
   }
+  getBackgroundImg(){
+  if(posterPath == null){
+    return 'https://us.123rf.com/450wm/siamimages/siamimages1512/siamimages151200645/49650467-por-eso-nos-icono-ilustraci%C3%B3n-y-arte-vectorial-de.jpg';
+  }else{
+    return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+  }
+  }
 }
