@@ -1,7 +1,8 @@
 # Movies App
 
-Nuevo proyecto de flutter con finalidad de practica.
-
+![Home page](https://res.cloudinary.com/dlds4xwpk/image/upload/v1595956610/Screenshot_20200728_110443_com.example.movies_app_wrhr2h.jpg)
+![Detail page](https://res.cloudinary.com/dlds4xwpk/image/upload/v1595956606/Screenshot_20200728_110518_com.example.movies_app_nl2kuf.jpg)
+![SearchButton](https://res.cloudinary.com/dlds4xwpk/image/upload/v1595956595/Screenshot_20200728_110504_com.example.movies_app_aytpnc.jpg)
 ## Informacion
 
 Este proyecto se conecta a una API de peliculas y muestra informacion
