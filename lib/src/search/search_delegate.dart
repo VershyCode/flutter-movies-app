@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DataSearch extends SearchDelegate {
+
+  String selected = '';
   final peliculas = [
     'Aquaman',
     'Parasitos',
@@ -51,7 +53,14 @@ class DataSearch extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     // Crea los resultados que vamos a mostrar.
-    return Container();
+    return Center(
+      child: Container(
+        height: 100.0,
+        width: 100.0,
+        color: Colors.blueAccent,
+        child: Text(selected),
+      ),
+    );
   }
 
   @override
@@ -71,7 +80,10 @@ class DataSearch extends SearchDelegate {
         return ListTile(
           leading: Icon(Icons.movie),
           title: Text(listaSugerida[i]),
-          onTap: (){},
+          onTap: (){
+            selected = listaSugerida[i];
+            showResults(context);
+          },
         );
       }
     );
